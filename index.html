@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competentraders Robot 🤖 Prediction</title>
+</head>
+<body style="background-color: #0d1117; color: #c9d1d9; font-family: 'Courier New', Courier, monospace; text-align: center; padding: 20px;">
+
+    <header style="margin-bottom: 40px; padding: 30px 20px; background-image: url('1xoreva.gif'); background-size: cover; background-position: center; border-radius: 8px; border: 1px solid #30363d; animation: fadeIn 2s;">
+        <h1 style="font-size: 2.5em; color: #58a6ff; text-transform: uppercase; text-shadow: 2px 2px 4px #000; animation: flashText 1.5s infinite;">Competent Robot Prediction</h1>
+        <p style="font-size: 1.2em; color: #8b949e; text-shadow: 1px 1px 3px #000;">Select a league for analysis.</p>
+    </header>
+    
+    <style>
+        /* This is an embedded style block, as inline styles don't support keyframe animations directly */
+        @keyframes flashText {
+            0% { color: #58a6ff; }
+            50% { color: #ffffff; }
+            100% { color: #58a6ff; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+
+    <main style="max-width: 800px; margin: auto; padding: 20px; border: 1px solid #30363d; border-radius: 8px; background-color: #161b22; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        
+        <div id="league-selection" style="display: block;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                <button class="league-btn" data-league="premier-league" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">Premier League ( England)</button>
+
+
+
+                <button class="league-btn" data-league="la-liga" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">La Liga ( Spanish)</button>
+
+
+
+                <button class="league-btn" data-league="bundesliga" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">Bundesliga (Germany)</button>
+
+
+
+
+                <button class="league-btn" data-league="serie-a" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">Serie A ( Italy)  </button>
+
+
+
+                <button class="league-btn" data-league="serie-a" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">Ligue 1 ( french) </button>
+
+
+
+                <button class="league-btn" data-league="eredivisie" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">Eredivisie ( Nederlands)</button>
+
+
+
+
+                <button class="league-btn" data-league="mls" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">Major League Soccer (All Majors Leagues) </button>
+            </div>
+        </div>
+
+        <div id="analysis-animation" style="display: none; padding: 50px 20px;">
+            <p style="font-size: 2em; font-weight: bold;">[ ANALYZING DATA... ]</p>
+            <div id="loading-bar" style="width: 100%; height: 20px; background-color: #21262d; border-radius: 10px; margin-top: 20px;">
+                <div style="width: 0%; height: 100%; background-color: #58a6ff; border-radius: 10px; transition: width 4s linear;"></div>
+            </div>
+        </div>
+
+
+
+
+        <div id="prediction-result" style="display: none; text-align: left; padding: 20px;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h2 id="match-title" style="font-size: 2em; color: #58a6ff;"></h2>
+                <p id="match-score" style="font-size: 3em; font-weight: bold; color: #ffffff;"></p>
+            </div>
+            <div style="padding: 15px; background-color: #1a1e24; border-radius: 5px;">
+                <h3 style="font-size: 1.5em; color: #8b949e; border-bottom: 1px solid #30363d; padding-bottom: 5px;">Robot Prediction Report:</h3>
+                <p id="analysis-note" style="font-size: 1.1em; line-height: 1.6; color: #c9d1d9;"></p>
+            </div>
+            <button id="reset-button" style="padding: 12px 24px; font-size: 1em; font-weight: bold; cursor: pointer; background-color: #a42c30; color: white; border: none; border-radius: 5px; margin-top: 30px;">
+                Analyze Another Match
+            </button>
+        </div>
+
+
+
+
+
+    </main>
+
+    <footer style="margin-top: 50px; font-size: 0.8em; color: #8b949e;">
+        <p>&copy; 2025 COMPETENTRADERS PREDICTIONS</p>
+    </footer>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Define your predictions data structure
+            const predictionsData = {
+                "premier-league": [
+                    {
+                        teams: "Manchester City vs. Arsenal",
+                        score: "2 - 1",
+                        note: "Based on algorithmic analysis of recent form and offensive output, Manchester City's home advantage and superior tactical depth gives them a narrow edge. Expect a high-scoring match with an intense second half."
+                    },
+
+
+
+                    {
+                        teams: "Liverpool vs. Tottenham",
+                        score: "3 - 0",
+                        note: "Statistical models indicate Liverpool's high-pressing system and attacking efficiency will overwhelm Tottenham's defense. The predicted score reflects a dominant performance at home with a clean sheet."
+                    },
+
+
+
+
+
+                    // Add more Premier League matches here
+                ],
+                "la-liga": [
+                    {
+                        teams: "Real Madrid vs. Barcelona",
+                        score: "1 - 1",
+                        note: "Historical data and current player ratings point to a fiercely contested El Clásico. Both teams possess significant offensive threats, but defensive solidity will lead to a predicted draw. The data suggests a low-scoring affair."
+                    },
+                    // Add more La Liga matches here
+                ],
+                "bundesliga": [
+                    {
+                        teams: "Bayern Munich vs. Borussia Dortmund",
+                        score: "3 - 2",
+                        note: "Analysis of attacking metrics and historical performance in this derby suggests a high-intensity, back-and-forth game. Bayern's home goal-scoring rate gives them a slight advantage, though Dortmund's counter-attack remains a significant threat."
+                    },
+                    // Add more Bundesliga matches here
+                ],
+                "serie-a": [
+                    {
+                        teams: "Inter Milan vs. AC Milan",
+                        score: "2 - 0",
+                        note: "The RoboPredictor model has identified Inter Milan's current defensive organization as a key factor. AC Milan's attack may struggle to break through, leading to a comfortable home victory for Inter. The predicted score reflects this defensive strength."
+                    },
+                    // Add more Serie A matches here
+                ],
+                "eredivisie": [
+                    {
+                        teams: "Ajax vs. Feyenoord",
+                        score: "2 - 2",
+                        note: "RoboPredictor's algorithms predict a thrilling 'Klassieker.' Both teams demonstrate high offensive stats, but defensive lapses are also common. The final result will likely be a high-scoring draw."
+                    },
+                    // Add more Eredivisie matches here
+                ],
+                "mls": [
+                    {
+                        teams: "LA Galaxy vs. LAFC",
+                        score: "1 - 3",
+                        note: "Analysis of recent derby matches and form suggests that LAFC's more organized midfield and clinical finishing will give them the edge over LA Galaxy. A decisive away victory is predicted."
+                    },
+                    // Add more MLS matches here
+                ]
+            };
+
+            const leagueSelection = document.getElementById('league-selection');
+            const analysisAnimation = document.getElementById('analysis-animation');
+            const predictionResult = document.getElementById('prediction-result');
+            const leagueButtons = document.querySelectorAll('.league-btn');
+            const matchTitle = document.getElementById('match-title');
+            const matchScore = document.getElementById('match-score');
+            const analysisNote = document.getElementById('analysis-note');
+            const resetButton = document.getElementById('reset-button');
+            const loadingBar = document.getElementById('loading-bar').children[0];
+
+            leagueButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const league = button.getAttribute('data-league');
+                    
+                    leagueSelection.style.display = 'none';
+                    analysisAnimation.style.display = 'block';
+                    loadingBar.style.width = '0%';
+                    
+                    setTimeout(() => {
+                        loadingBar.style.width = '100%';
+                    }, 50);
+
+                    setTimeout(() => {
+                        const leaguePredictions = predictionsData[league];
+                        if (leaguePredictions && leaguePredictions.length > 0) {
+                            const randomIndex = Math.floor(Math.random() * leaguePredictions.length);
+                            const prediction = leaguePredictions[randomIndex];
+
+                            matchTitle.textContent = prediction.teams;
+                            matchScore.textContent = prediction.score;
+                            analysisNote.textContent = prediction.note;
+
+                            analysisAnimation.style.display = 'none';
+                            predictionResult.style.display = 'block';
+                        } else {
+                            matchTitle.textContent = "Error: No Predictions Found";
+                            matchScore.textContent = "";
+                            analysisNote.textContent = "The RoboPredictor database for this league is currently empty. Please try again later.";
+                            analysisAnimation.style.display = 'none';
+                            predictionResult.style.display = 'block';
+                        }
+                    }, 4000);
+                });
+            });
+
+            resetButton.addEventListener('click', () => {
+                predictionResult.style.display = 'none';
+                leagueSelection.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
