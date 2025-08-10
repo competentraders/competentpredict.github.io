@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboPredictor 3000 VIP</title>
+</head>
+<body style="background-color: #0d1117; color: #c9d1d9; font-family: 'Courier New', Courier, monospace; text-align: center; padding: 20px;">
+
+    <style>
+        @keyframes flashText {
+            0% { color: #58a6ff; }
+            50% { color: #ffffff; }
+            100% { color: #58a6ff; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+
+    <header style="margin-bottom: 40px; padding: 30px 20px; background-image: url('1xoreva1.gif'); background-size: cover; background-position: center; border-radius: 8px; border: 1px solid #30363d; animation: fadeIn 2s;">
+     
+    </header>
+
+
+
+<div style="position: relative; width: 600px; height: 350px; margin: auto; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <img src="1xpromo.jpg" alt="Promotional Offer" style="width: 100%; height: 100%; object-fit: cover;">
+    
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; text-shadow: 2px 2px 4px #000000; padding: 20px; background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;">
+        <h2 style="font-size: 2.5em; margin: 0; text-transform: uppercase;">Promocode:</h2>
+        <p style="font-size: 4em; font-weight: bold; margin: 0;">IAMGODSWILL</p>
+        <p style="font-size: 1.2em; margin-top: 10px;">Use this code to unlock special VIP access!</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<h1 style="font-size: 2.5em; color: #58a6ff; text-transform: uppercase; text-shadow: 2px 2px 4px #000; animation: flashText 1.5s infinite;">VIP</h1>
+        <p style="font-size: 1.2em; color: #8b949e; text-shadow: 1px 1px 3px #000;">VIP Prediction Analysis</p>
+
+
+
+
+
+
+
+
+
+    
+    <main style="max-width: 800px; margin: auto; padding: 20px; border: 1px solid #30363d; border-radius: 8px; background-color: #161b22; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        
+        <div id="league-selection" style="display: block;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                <button class="league-btn" data-league="premier-league" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">Premier League</button>
+
+
+
+
+                <button class="league-btn" data-league="la-liga" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">La Liga</button>
+
+
+
+
+
+
+                <button class="league-btn" data-league="bundesliga" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">Bundesliga</button>
+
+
+
+
+
+                <button class="league-btn" data-league="serie-a" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">Serie A</button>
+
+
+
+
+
+                <button class="league-btn" data-league="eredivisie" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">Eredivisie</button>
+
+
+
+
+
+                <button class="league-btn" data-league="mls" style="padding: 15px 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #238636; color: white; border: none; border-radius: 5px; transition: background-color 0.3s; width: 220px;">Major League Soccer</button>
+            </div>
+        </div>
+
+
+
+
+
+        <div id="analysis-animation" style="display: none; padding: 50px 20px;">
+            <p style="font-size: 2em; font-weight: bold;">[ ANALYZING DATA... ]</p>
+            <div id="loading-bar" style="width: 100%; height: 20px; background-color: #21262d; border-radius: 10px; margin-top: 20px;">
+
+
+
+                <div style="width: 0%; height: 100%; background-color: #58a6ff; border-radius: 10px; transition: width 4s linear;"></div>
+            </div>
+        </div>
+
+
+
+
+
+        <div id="vip-prediction-result" style="display: none; text-align: left; padding: 20px;">
+            <div id="prediction-content" style="text-align: center; margin-bottom: 20px;">
+                <h2 id="match-title" style="font-size: 2em; color: #58a6ff;"></h2>
+                <p style="font-size: 3em; font-weight: bold; color: #ffffff;">🔒</p>
+            </div>
+
+
+
+
+            
+            <div id="vip-options" style="padding: 15px; background-color: #1a1e24; border-radius: 5px; text-align: center;">
+                <h3 style="font-size: 1.5em; color: #8b949e; border-bottom: 1px solid #30363d; padding-bottom: 5px;">Unlock VIP Predictions</h3>
+                <ul style="list-style-type: none; padding: 0; margin: 20px 0;">
+
+
+
+
+
+
+                    <li style="font-size: 1.2em; margin: 10px 0;">VIP CORRECT SCORE 10k FOR A MONTH 🔒</li>
+
+
+
+
+                    <li style="font-size: 1.2em; margin: 10px 0;">VIP CORRECT SCORE 30K FOR 3 MONTHS 🔒</li>
+
+
+
+
+
+                    <li style="font-size: 1.2em; margin: 10px 0;">VIP CORRECT SCORE 50K FOR 6 MONTHS 🔒</li>
+
+
+
+
+                    <li style="font-size: 1.2em; margin: 10px 0;">VIP SUREST WIN 50K FOR ONE MONTH 🔒</li>
+
+
+
+
+                    <li style="font-size: 1.2em; margin: 10px 0;">VIP WEEKLY SURE 5K 🔒</li>
+                </ul>
+
+
+
+
+                <a href="https://wa.me/2349153258628?text=I%20am%20interested%20in%20your%20VIP%20predictions." style="display: inline-block; padding: 12px 24px; font-size: 1.2em; font-weight: bold; cursor: pointer; background-color: #25d366; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px;">
+                    Purchase Now
+                </a>
+            </div>
+            
+            <button id="reset-button" style="width: 100%; padding: 12px 24px; font-size: 1em; font-weight: bold; cursor: pointer; background-color: #a42c30; color: white; border: none; border-radius: 5px; margin-top: 30px;">
+                Analyze Another Match
+            </button>
+        </div>
+
+
+
+
+
+    </main>
+
+    <footer style="margin-top: 50px; font-size: 0.8em; color: #8b949e;">
+        <p>&copy; 2025 RoboPredictor 3000</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const predictionsData = {
+                "premier-league": [
+                    { teams: "Manchester City vs. Arsenal" },
+                    { teams: "Liverpool vs. Tottenham" },
+                    { teams: "Chelsea vs. Manchester United" }
+                ],
+
+
+
+
+                "la-liga": [
+                    { teams: "Real Madrid vs. Barcelona" },
+                    { teams: "Atlético Madrid vs. Valencia" }
+                ],
+
+
+
+
+
+                "bundesliga": [
+                    { teams: "Bayern Munich vs. Borussia Dortmund" },
+                    { teams: "RB Leipzig vs. Bayer Leverkusen" }
+                ],
+
+
+
+
+
+                "serie-a": [
+                    { teams: "Inter Milan vs. AC Milan" },
+                    { teams: "Juventus vs. Napoli" }
+                ],
+
+
+
+
+
+
+                "eredivisie": [
+                    { teams: "Ajax vs. Feyenoord" }
+                ],
+
+
+
+
+
+                "mls": [
+                    { teams: "LA Galaxy vs. LAFC" }
+                ]
+            };
+
+            const leagueSelection = document.getElementById('league-selection');
+            const analysisAnimation = document.getElementById('analysis-animation');
+            const vipPredictionResult = document.getElementById('vip-prediction-result');
+            const leagueButtons = document.querySelectorAll('.league-btn');
+            const matchTitle = document.getElementById('match-title');
+            const resetButton = document.getElementById('reset-button');
+            const loadingBar = document.getElementById('loading-bar').children[0];
+
+            leagueButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const league = button.getAttribute('data-league');
+                    
+                    leagueSelection.style.display = 'none';
+                    analysisAnimation.style.display = 'block';
+                    loadingBar.style.width = '0%';
+                    
+                    setTimeout(() => {
+                        loadingBar.style.width = '100%';
+                    }, 50);
+
+                    setTimeout(() => {
+                        const leaguePredictions = predictionsData[league];
+                        if (leaguePredictions && leaguePredictions.length > 0) {
+                            const randomIndex = Math.floor(Math.random() * leaguePredictions.length);
+                            const prediction = leaguePredictions[randomIndex];
+
+                            matchTitle.textContent = prediction.teams;
+
+                            analysisAnimation.style.display = 'none';
+                            vipPredictionResult.style.display = 'block';
+                        } else {
+                            matchTitle.textContent = "Error: No Predictions Found";
+                            analysisAnimation.style.display = 'none';
+                            vipPredictionResult.style.display = 'block';
+                        }
+                    }, 4000);
+                });
+            });
+
+            resetButton.addEventListener('click', () => {
+                vipPredictionResult.style.display = 'none';
+                leagueSelection.style.display = 'block';
+            });
+        });
+    </script>
+
+
+<div style="position: relative; width: 600px; height: 350px; margin: auto; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <img src="1xpromo.jpg" alt="Promotional Offer" style="width: 100%; height: 100%; object-fit: cover;">
+    
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; text-shadow: 2px 2px 4px #000000; padding: 20px; background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;">
+        <h2 style="font-size: 2.5em; margin: 0; text-transform: uppercase;">Promocode:</h2>
+        <p style="font-size: 4em; font-weight: bold; margin: 0;">IAMGODSWILL</p>
+        <p style="font-size: 1.2em; margin-top: 10px;">Use this code to unlock special VIP access!</p>
+    </div>
+</div>
+
+</body>
+</html>
